@@ -1,0 +1,157 @@
+.focus {
+  width: 100%;
+  max-width: 680px;
+  margin: 16px auto;
+  padding: 32px;
+  background: var(--paper, #fff);
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  display: grid;
+  gap: 20px;
+  overflow-wrap: anywhere;
+}
+.focus h2,
+.focus p {
+  margin: 0;
+}
+.focus p {
+  line-height: 1.6;
+  color: #666;
+}
+.focus form {
+  display: grid;
+  gap: 16px;
+}
+.focus input:not([type='checkbox']),
+.focus textarea {
+  width: 100%;
+  min-height: 44px;
+  box-sizing: border-box;
+  border: 1px solid #d3d6dc;
+  border-radius: 6px;
+  padding: 12px;
+  font: inherit;
+  background: #fff;
+  color: #101516;
+}
+.focus textarea {
+  min-height: 92px;
+}
+.focus button,
+.focus a,
+.focus summary {
+  min-height: 44px;
+}
+.focus a {
+  display: inline-flex;
+  align-items: center;
+  color: #0c4cbe;
+}
+.focus .file {
+  display: none;
+}
+.summary {
+  margin: 0;
+  padding-left: 24px;
+  display: grid;
+  gap: 12px;
+  line-height: 1.5;
+}
+.details summary {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #0c4cbe;
+}
+.fact {
+  display: grid;
+  gap: 10px;
+  border-top: 1px solid #e5e7eb;
+  padding: 16px 0;
+}
+.fact label {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.fact input[type='checkbox'] {
+  width: 22px;
+  height: 22px;
+}
+.fact blockquote {
+  margin: 0;
+  padding-left: 12px;
+  border-left: 3px solid #e5e7eb;
+  color: #666;
+}
+.matches {
+  display: grid;
+  gap: 16px;
+}
+.matches header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+.matches h2,
+.matches h3,
+.matches p {
+  margin: 0;
+}
+.matches > p {
+  color: #666;
+  line-height: 1.5;
+}
+.list {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.match {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 20px;
+  display: grid;
+  gap: 10px;
+  overflow-wrap: anywhere;
+}
+.match p {
+  line-height: 1.5;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+.actions a,
+.actions button {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: #0c4cbe;
+}
+@media (max-width: 640px) {
+  .focus {
+    padding: 20px;
+    margin: 0;
+    gap: 16px;
+  }
+  .match {
+    padding: 16px;
+  }
+  .focus h2 {
+    font-size: 22px;
+  }
+}
+
+.matches header a,
+.matches summary {
+  min-height: 44px;
+  align-content: center;
+}

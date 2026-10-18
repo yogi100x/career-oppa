@@ -1,0 +1,38 @@
+{
+  "name": "@career-workspace/adapters",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./storage": "./src/storage/index.ts",
+    "./ai": "./src/ai/index.ts",
+    "./ai/cv-extract": "./src/ai/cv-extract.ts",
+    "./ai/coach": "./src/ai/coach.ts",
+    "./job-text": "./src/job-text.ts",
+    "./job-discovery": "./src/job-discovery.ts",
+    "./discovery-dataset": "./src/discovery-dataset.ts",
+    "./cv-text": "./src/cv-text.ts",
+    "./payments": "./src/payments.ts",
+    "./getleads": "./src/getleads.ts",
+    "./zernio": "./src/zernio.ts"
+  },
+  "scripts": {
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --root ../.. adapters"
+  },
+  "dependencies": {
+    "@career-workspace/contracts": "workspace:*",
+    "@aws-sdk/client-s3": "^3.1146.0",
+    "@openrouter/ai-sdk-provider": "^3.1.0",
+    "ai": "^7.0.128",
+    "cheerio": "^1.2.0",
+    "dodopayments": "^2.53.0",
+    "ipaddr.js": "^2.5.0",
+    "mammoth": "^1.13.0",
+    "pdfjs-dist": "^6.4.299",
+    "undici": "^8.11.2",
+    "zod": "^4.6.5"
+  }
+}

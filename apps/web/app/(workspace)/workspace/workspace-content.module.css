@@ -1,0 +1,168 @@
+.feed {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  display: grid;
+  grid-auto-rows: max-content;
+  align-content: start;
+  gap: 18px;
+  padding: 0 0 24px;
+}
+.reminders,
+.documents {
+  border: 1px solid var(--color-concrete);
+  border-radius: 6px;
+  background: var(--surface-paper);
+  padding: 20px;
+}
+.sectionHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+.sectionHeading h2 {
+  font-size: 20px;
+}
+.sectionHeading p {
+  margin-top: 4px;
+  color: var(--color-iron);
+  font-size: 13px;
+}
+.reminderList {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+.reminderList li {
+  min-width: 0;
+}
+.reminderList a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  min-height: 46px;
+  border-bottom: 1px solid var(--color-concrete);
+  padding: 10px 2px;
+  color: var(--color-carbon);
+  text-decoration: none;
+}
+.reminderList a:hover,
+.documentActions a:hover {
+  color: var(--color-deep-iris);
+}
+.reminderList strong {
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+.reminderList time {
+  flex: none;
+  color: var(--color-iron);
+  font-size: 12px;
+}
+.empty,
+.error {
+  margin: 0;
+  padding: 14px;
+  border-radius: 4px;
+  background: var(--surface-mist);
+  color: var(--color-iron);
+  font-size: 13px;
+}
+.error {
+  color: #873b28;
+  background: #fff0ed;
+}
+.tableScroll {
+  overflow-x: auto;
+}
+.documentTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+}
+.documentTable th {
+  color: var(--color-iron);
+  font-size: 11px;
+  font-weight: 600;
+}
+.documentTable th,
+.documentTable td {
+  border-bottom: 1px solid var(--color-concrete);
+  padding: 12px 14px 12px 0;
+  vertical-align: middle;
+}
+.documentTable td:first-child strong,
+.documentTable td:first-child small {
+  display: block;
+}
+.documentTable td:first-child small {
+  margin-top: 3px;
+  color: var(--color-iron);
+}
+.documentActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.documentActions a {
+  color: var(--color-deep-iris);
+  font-weight: 600;
+  white-space: nowrap;
+}
+@media (max-width: 700px) {
+  .feed {
+    gap: 14px;
+  }
+  .reminders,
+  .documents {
+    padding: 14px;
+  }
+  .reminderList {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .documentTable th,
+  .documentTable td {
+    padding: 9px 10px 9px 0;
+  }
+}
+
+/* Home sections follow the approved open layout beneath the welcome card. */
+.reminders {
+  border: 0;
+  padding: 0;
+  background: none;
+}
+.reminders > .empty {
+  padding: 0;
+  background: none;
+}
+
+.documentUpload {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: end;
+  margin-top: 16px;
+}
+.documentUpload label {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  flex: 1 1 180px;
+}
+.documentUpload input,
+.documentUpload select {
+  max-width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-concrete);
+  border-radius: 6px;
+  background: var(--surface-paper);
+}

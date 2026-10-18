@@ -1,0 +1,33 @@
+{
+  "name": "career-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.33.0",
+  "scripts": {
+    "dev": "pnpm --filter @career-workspace/web dev",
+    "build": "pnpm --filter @career-workspace/web build",
+    "start": "pnpm --filter @career-workspace/web start",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "test": "vitest run",
+    "test:e2e": "playwright test --config=playwright.config.ts --project=chromium",
+    "test:visual": "playwright test --config=playwright.config.ts --project=workspace-visual",
+    "verify:cut-flow": "node scripts/verify-cut-flow.mjs",
+    "test:watch": "vitest",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "db:migrate": "pnpm --filter @career-workspace/db db:migrate"
+  },
+  "devDependencies": {
+    "@clerk/testing": "^2.2.43",
+    "@eslint/js": "^9.39.1",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^24.10.0",
+    "eslint": "^9.39.1",
+    "prettier": "^3.6.2",
+    "tsx": "4.23.15",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vitest": "^3.2.4"
+  }
+}

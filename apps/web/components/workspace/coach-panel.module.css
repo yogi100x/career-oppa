@@ -1,0 +1,77 @@
+.intro {
+  color: var(--color-iron);
+  font-size: 13px;
+}
+
+.error {
+  margin: 12px 0;
+  padding: 10px 12px;
+  border-left: 3px solid #a83636;
+  background: #fff3f2;
+  color: #782828;
+  font-size: 13px;
+}
+
+.proposalList {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.proposal {
+  padding: 14px;
+  border: 1px solid var(--color-concrete);
+  border-left: 3px solid var(--color-signal-blue);
+  border-radius: 4px;
+  background: var(--surface-mist);
+  color: var(--color-carbon);
+}
+
+.proposal h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.proposal p {
+  margin: 4px 0;
+  font-size: 13px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.proposal small {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-iron);
+  font-size: 12px;
+}
+
+.proposalActions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.proposalActions span {
+  color: var(--color-iron);
+  font-size: 12px;
+}
+
+.proposalActions :global(button) {
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.loadError {
+  padding: 24px;
+  color: #782828;
+}
+
+@media (max-width: 700px) {
+  .proposal {
+    padding: 12px;
+  }
+}

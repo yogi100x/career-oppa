@@ -1,0 +1,76 @@
+.section {
+  margin-bottom: 28px;
+}
+
+.heading {
+  margin-bottom: 12px;
+}
+
+.heading h2 {
+  margin-bottom: 6px;
+  font-size: 20px;
+}
+
+.heading p,
+.muted {
+  color: var(--color-iron);
+  font-size: 13px;
+}
+
+.panel {
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+  border: 1px solid var(--color-concrete);
+  border-radius: 6px;
+  padding: 18px;
+  background: var(--surface-paper);
+}
+
+.reminderNote,
+.connected,
+.confirm p,
+.linkCode p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.reminderNote code {
+  border-radius: 3px;
+  padding: 2px 5px;
+  background: var(--surface-mist);
+  font-family: inherit;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.confirm,
+.linkCode {
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+}
+
+.linkCode a {
+  color: var(--color-ultraviolet);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.linkCode a:focus-visible {
+  outline: 3px solid var(--color-ultraviolet);
+  outline-offset: 3px;
+}
+
+.error {
+  margin: 0;
+  color: var(--color-danger, #a12622);
+  font-size: 13px;
+}

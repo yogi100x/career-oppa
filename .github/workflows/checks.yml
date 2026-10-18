@@ -1,0 +1,152 @@
+name: Checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Lint, typecheck, tests, and browser checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: career_workspace
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d career_workspace"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/career_workspace
+      DATABASE_TEST_URL: postgresql://postgres:postgres@localhost:5432/career_workspace_test
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        with:
+          version: 10.33.0
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Create test database
+        run: psql "$DATABASE_URL" -c 'CREATE DATABASE career_workspace_test;'
+
+      - name: Migrate development database
+        run: pnpm db:migrate
+
+      - name: Migrate test database
+        run: DATABASE_URL="$DATABASE_TEST_URL" pnpm db:migrate
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Run database-backed tests
+        run: pnpm test
+
+      - name: Require Clerk development keys for browser checks
+        env:
+          CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
+          NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+        run: |
+          if [ -z "$CLERK_SECRET_KEY" ] || [ -z "$NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY" ]; then
+            echo "::error::Browser checks need the CLERK_SECRET_KEY and NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY repository secrets."
+            exit 1
+          fi
+
+      - name: Build production web app
+        env:
+          DATABASE_URL: ${{ env.DATABASE_TEST_URL }}
+          NEXT_DIST_DIR: .next-build
+          FEATURE_PRACTICE: 'true'
+          FEATURE_PUBLISHING: 'true'
+          STORAGE_DRIVER: local
+          CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
+          NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+        run: pnpm build
+
+      - name: Install Chromium and system dependencies
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Run authenticated end-to-end checks
+        env:
+          PLAYWRIGHT_PRODUCTION_SERVER: 'true'
+          CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
+          NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+        run: pnpm test:e2e --project=chromium --reporter=list,html
+
+      - name: Check practice stays hidden when disabled
+        env:
+          PLAYWRIGHT_PRODUCTION_SERVER: 'true'
+          PLAYWRIGHT_PRACTICE_ENABLED: 'false'
+          CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
+          NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+        run: pnpm test:e2e --grep 'practice link with feature off' --reporter=list
+
+      # Visual snapshots are OS-specific; review and commit Linux baselines before CI can pass.
+      - name: Run desktop and phone visual checks
+        id: visual_checks
+        env:
+          PLAYWRIGHT_PRODUCTION_SERVER: 'true'
+          CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
+          NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+        run: pnpm test:visual --reporter=list,html
+
+      # Generate changed Linux screen candidates for review; this does not approve it or
+      # turn the failed comparison into a passing release check.
+      - name: Capture Linux baseline candidates after a visual mismatch
+        id: baseline_candidates
+        if: failure() && steps.visual_checks.outcome == 'failure'
+        env:
+          PLAYWRIGHT_PRODUCTION_SERVER: 'true'
+          CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
+          NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+        run: pnpm test:visual --update-snapshots --reporter=list
+
+      - name: Upload Linux screenshot candidates for review
+        if: always() && steps.baseline_candidates.outcome != 'skipped' && steps.baseline_candidates.outcome != ''
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: linux-visual-review-candidates
+          path: apps/web/e2e/*-snapshots/*-linux.png
+          if-no-files-found: ignore
+          retention-days: 3
+
+      - name: Upload failed Playwright reports
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: failed-playwright-reports
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+          retention-days: 3

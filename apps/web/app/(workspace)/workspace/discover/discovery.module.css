@@ -1,0 +1,434 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex: none;
+  padding: 0 0 8px;
+}
+
+.toolbar p {
+  margin: 0;
+  color: var(--color-iron);
+  font-size: 13px;
+}
+
+.toolbar strong {
+  color: var(--color-carbon);
+  font-weight: 600;
+}
+
+.discovery {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.loading,
+.refreshNote {
+  margin: 0;
+  padding: 12px 0;
+  color: var(--color-iron);
+}
+
+.refreshNote {
+  color: #244b32;
+}
+
+.collectionPanel {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 18px;
+  border-left: 3px solid var(--color-deep-iris);
+  background: var(--color-paper, #fff);
+}
+
+.collectionPanel button {
+  min-height: 44px;
+}
+
+.collectionPanel h2 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.collectionPanel p {
+  margin: 6px 0 0;
+  color: var(--color-iron);
+  line-height: 1.5;
+}
+
+.collectionFallback {
+  margin-top: 12px;
+}
+
+.collectionFallback ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.collectionFallback a {
+  color: var(--color-deep-iris);
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+.error {
+  margin: 0;
+  padding: 12px 16px;
+  border-radius: 6px;
+  background: #fff0ed;
+  color: #873b28;
+}
+
+.error p {
+  margin: 0;
+}
+
+.error button {
+  margin-left: 8px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  align-items: start;
+  flex: 1;
+  min-height: 0;
+  gap: 28px;
+}
+
+.results {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.resultsHeading,
+.sourcesHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.resultsHeading h2,
+.sourcesHeading h2,
+.profilePrompt h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.resultsHeading p,
+.sourcesHeading p {
+  margin: 4px 0 0;
+  color: var(--color-iron);
+  font-size: 13px;
+}
+
+.resultsHeading > a,
+.profilePrompt > a,
+.sourceLine a,
+.savedLink {
+  color: var(--color-deep-iris);
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+.jobList,
+.sources ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.collectionSummary {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  background: var(--color-paper, #fff);
+  color: var(--color-iron);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.collectionSummary p {
+  margin: 0;
+}
+
+.collectionSummary strong {
+  color: var(--color-carbon);
+}
+
+.jobList > li {
+  border-bottom: 1px solid var(--color-concrete);
+}
+
+.job {
+  padding: 20px 0 22px;
+}
+
+.jobHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.jobHeader h3 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.company {
+  margin: 4px 0 0;
+  color: var(--color-iron);
+  overflow-wrap: anywhere;
+}
+
+.jobHeader button,
+.savedLink {
+  flex: none;
+  white-space: nowrap;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin: 12px 0 6px;
+  color: var(--color-carbon);
+  font-size: 13px;
+}
+
+.meta span + span::before {
+  content: '·';
+  margin-right: 12px;
+  color: var(--color-stone);
+}
+
+.sourceLine {
+  margin: 0;
+  color: var(--color-iron);
+  font-size: 12px;
+}
+
+.matchReason {
+  margin-top: 14px;
+}
+
+.matchReason h4 {
+  margin: 0 0 4px;
+  font-size: 13px;
+}
+
+.matchReason ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--color-iron);
+  font-size: 13px;
+}
+
+.matchReason li + li {
+  margin-top: 4px;
+}
+
+.terms {
+  margin: 12px 0 0;
+  color: var(--color-iron);
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.terms strong {
+  color: var(--color-carbon);
+}
+
+.sources {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-top: 2px solid var(--color-deep-moss);
+  padding-top: 12px;
+}
+
+.sourcesHeading {
+  display: block;
+}
+
+.sources ul {
+  border-top: 1px solid var(--color-concrete);
+}
+
+.sources li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-concrete);
+}
+
+.sourceTopline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.sourceTopline strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.sourceStatus,
+.running,
+.failed {
+  flex: none;
+  color: var(--color-iron);
+  font-size: 11px;
+}
+
+.running {
+  color: var(--color-deep-iris);
+}
+
+.failed {
+  color: #873b28;
+}
+
+.sources li > p {
+  margin: 4px 0;
+  color: var(--color-iron);
+  font-size: 12px;
+}
+
+.sources li > small {
+  display: block;
+  color: var(--color-iron);
+  font-size: 11px;
+}
+
+.sources .sourceError {
+  margin-top: 8px;
+  color: #873b28;
+  overflow-wrap: anywhere;
+}
+
+.sourceNote {
+  margin: 14px 0 0;
+  color: var(--color-iron);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.profilePrompt,
+.empty {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--color-concrete);
+}
+
+.profilePrompt p,
+.empty p {
+  max-width: 62ch;
+  color: var(--color-iron);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .columns {
+    grid-template-columns: minmax(0, 1fr) 240px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  /* Keep recovery and source health in one readable page, not a tiny inner pane. */
+  .discoveryScreen {
+    overflow-y: auto;
+  }
+
+  .discoveryScreen > div:last-child {
+    flex: none;
+    overflow: visible;
+  }
+
+  .discovery {
+    flex: none;
+  }
+
+  .toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .toolbar button {
+    width: 100%;
+  }
+
+  .collectionPanel {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .collectionPanel button {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .columns {
+    display: flex;
+    flex-direction: column;
+    flex: none;
+    overflow: visible;
+    gap: 20px;
+  }
+
+  .results {
+    flex: none;
+    height: auto;
+    overflow: visible;
+  }
+
+  .sources {
+    height: auto;
+    overflow: visible;
+    flex: none;
+    padding-top: 16px;
+  }
+
+  .job {
+    padding: 16px 0 18px;
+  }
+
+  .jobHeader {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .jobHeader button,
+  .savedLink {
+    align-self: flex-start;
+  }
+
+  .meta {
+    gap: 4px 10px;
+  }
+
+  .meta span + span::before {
+    margin-right: 7px;
+  }
+}

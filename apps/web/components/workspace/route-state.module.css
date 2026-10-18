@@ -1,0 +1,37 @@
+.state {
+  min-height: 55vh;
+  display: grid;
+  place-content: center;
+  gap: 16px;
+  padding: 32px;
+  background: var(--surface-mist);
+  color: var(--color-carbon);
+  font-family: var(--font-inter);
+}
+.state h1 {
+  margin: 0;
+  font-size: 28px;
+}
+.state p {
+  max-width: 480px;
+  margin: 0;
+  line-height: 1.6;
+  color: var(--color-iron);
+}
+.state button {
+  justify-self: start;
+  border: 0;
+  border-radius: 6px;
+  padding: 12px 24px;
+  background: var(--color-signal-blue);
+  color: var(--color-paper);
+  font: inherit;
+  cursor: pointer;
+}
+.state button:focus-visible {
+  outline: 3px solid var(--color-ultraviolet);
+  outline-offset: 3px;
+}
+.state a {
+  color: var(--color-deep-iris);
+}

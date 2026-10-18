@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Career-Oppa",
+  "version": "0.1.0",
+  "description": "Save a visible job posting to your private Career-Oppa workspace.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAquvMnjmAU6krVhyzqnTRJkuVEHwlzg9lX0JUWZqreYVrWsGiI6tqx18jSo6+Ky8WCCApxySUzhAG77CzhFL9fFQM3UHZGIjr9yFB9AwRfJI1fuL2PIbp04MFmmKA5eVvdN213ZWOUn+krbJYBJif8HMfr0z1afNm6RBKrOxEPItF6nRXQrPu3IyD2rXegjqQjTzkweiyNuyb6hlJmgNvD86otHF0SY7MswHTrEe4PU64aETzx6CZx5/sGfS2a8Vx/KHF/fYRsiwaILhWegItGPespLktwAGotlysmsVG3gL23/PFouxXnNOIkaX1CQ8Zp98DCjZf2GYtpLlrlg3JJwIDAQAB",
+  "permissions": [
+    "storage",
+    "cookies",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://localhost:3000/*",
+    "http://localhost:3001/*",
+    "https://cool-llama-4046.clerk.accounts.dev/*"
+  ],
+  "action": {
+    "default_popup": "index.html"
+  }
+}

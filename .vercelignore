@@ -1,0 +1,16 @@
+# Deploy application source; keep private files and reference material local.
+.git
+reference
+output
+.codex
+.agents
+.claude
+**/node_modules
+**/.next*
+**/.auth
+**/.local-storage
+**/.env*
+**/*.tsbuildinfo
+test-results
+playwright-report
+coverage

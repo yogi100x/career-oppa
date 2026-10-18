@@ -1,0 +1,1 @@
+ALTER TABLE "contacts" ADD COLUMN "provider_profile_url" text;

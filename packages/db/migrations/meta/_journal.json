@@ -1,0 +1,265 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1791259842233,
+      "tag": "0000_last_mockingbird",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791260003126,
+      "tag": "0001_closed_havok",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791260335105,
+      "tag": "0002_powerful_roxanne_simpson",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1791260467316,
+      "tag": "0003_slippery_rocket_racer",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1791262002549,
+      "tag": "0004_profile_projects",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1791262173167,
+      "tag": "0005_resume_versions",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1791262421826,
+      "tag": "0006_answer_drafts",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1791262992222,
+      "tag": "0007_coach_messages",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1791263105006,
+      "tag": "0008_coach_recovery",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1791263394384,
+      "tag": "0009_reminders",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1791278616118,
+      "tag": "0010_payments",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1791278735922,
+      "tag": "0011_contacts_suppressions",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "7",
+      "when": 1791279290462,
+      "tag": "0012_outreach",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1791279466103,
+      "tag": "0013_contact_profile_url",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1791279674034,
+      "tag": "0014_practice_sessions",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "7",
+      "when": 1791280150173,
+      "tag": "0015_rewards",
+      "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "7",
+      "when": 1791280618991,
+      "tag": "0016_publishing",
+      "breakpoints": true
+    },
+    {
+      "idx": 17,
+      "version": "7",
+      "when": 1791281140868,
+      "tag": "0017_account_deletion",
+      "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "7",
+      "when": 1791281730472,
+      "tag": "0018_publishing_event_owner",
+      "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "7",
+      "when": 1791327131500,
+      "tag": "0019_profile_preferences_documents",
+      "breakpoints": true
+    },
+    {
+      "idx": 20,
+      "version": "7",
+      "when": 1791431560720,
+      "tag": "0020_application_handoffs",
+      "breakpoints": true
+    },
+    {
+      "idx": 21,
+      "version": "7",
+      "when": 1791627836586,
+      "tag": "0021_job_discovery_pool",
+      "breakpoints": true
+    },
+    {
+      "idx": 22,
+      "version": "7",
+      "when": 1791643597271,
+      "tag": "0022_application_handoff_integrity",
+      "breakpoints": true
+    },
+    {
+      "idx": 23,
+      "version": "7",
+      "when": 1791647167289,
+      "tag": "0023_restore_discovery_pool",
+      "breakpoints": true
+    },
+    {
+      "idx": 24,
+      "version": "7",
+      "when": 1791668951172,
+      "tag": "0024_profile_cv_header",
+      "breakpoints": true
+    },
+    {
+      "idx": 25,
+      "version": "7",
+      "when": 1791669935303,
+      "tag": "0025_fact_details",
+      "breakpoints": true
+    },
+    {
+      "idx": 26,
+      "version": "7",
+      "when": 1791669947154,
+      "tag": "0026_strip_cv_text",
+      "breakpoints": true
+    },
+    {
+      "idx": 27,
+      "version": "7",
+      "when": 1791710000000,
+      "tag": "0027_telegram_links",
+      "breakpoints": true
+    },
+    {
+      "idx": 28,
+      "version": "7",
+      "when": 1791710000001,
+      "tag": "0028_telegram_sdk_state",
+      "breakpoints": true
+    },
+    {
+      "idx": 29,
+      "version": "7",
+      "when": 1791743166942,
+      "tag": "0029_telegram_unlinked_rate_limits",
+      "breakpoints": true
+    },
+    {
+      "idx": 30,
+      "version": "7",
+      "when": 1792076655362,
+      "tag": "0030_free_first_fit_review",
+      "breakpoints": true
+    },
+    {
+      "idx": 31,
+      "version": "7",
+      "when": 1792077071152,
+      "tag": "0031_durable_free_fit_review",
+      "breakpoints": true
+    },
+    {
+      "idx": 32,
+      "version": "7",
+      "when": 1792110578000,
+      "tag": "0032_discovery_catalog_state",
+      "breakpoints": true
+    },
+    {
+      "idx": 33,
+      "version": "7",
+      "when": 1792122625822,
+      "tag": "0033_fit_review_scorecard",
+      "breakpoints": true
+    },
+    {
+      "idx": 34,
+      "version": "7",
+      "when": 1792126152642,
+      "tag": "0034_resume_copy_request_key",
+      "breakpoints": true
+    },
+    {
+      "idx": 35,
+      "version": "7",
+      "when": 1792200000000,
+      "tag": "0035_resume_reuse_provenance",
+      "breakpoints": true
+    },
+    {
+      "idx": 36,
+      "version": "7",
+      "when": 1792292494407,
+      "tag": "0036_cv_upload_content_hash",
+      "breakpoints": true
+    }
+  ]
+}

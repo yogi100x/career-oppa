@@ -1,0 +1,74 @@
+.panel {
+  display: grid;
+  gap: 14px;
+  border: 1px solid var(--color-concrete);
+  border-radius: 6px;
+  background: var(--surface-paper);
+  padding: 22px;
+  scroll-margin-top: 24px;
+}
+.panel h2,
+.panel p {
+  margin: 0;
+}
+.panel p {
+  line-height: 1.6;
+  color: var(--color-iron);
+}
+.form {
+  display: grid;
+  gap: 14px;
+}
+.form label {
+  display: grid;
+  gap: 8px;
+}
+.form input[type='url'] {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--color-concrete);
+  border-radius: 6px;
+  padding: 12px;
+  background: var(--surface-paper);
+  color: var(--color-carbon);
+}
+.form .confirmation {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  line-height: 1.5;
+}
+.confirmation input {
+  flex: none;
+  margin-top: 4px;
+}
+.form button {
+  justify-self: start;
+}
+.submissions {
+  display: grid;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.submissions li {
+  display: grid;
+  gap: 6px;
+  padding-top: 14px;
+  border-top: 1px solid var(--color-concrete);
+}
+.submissions a {
+  color: var(--color-deep-iris);
+}
+.submissions small {
+  color: var(--color-iron);
+}
+@media (max-width: 700px) {
+  .panel {
+    padding: 16px;
+  }
+  .form button {
+    width: 100%;
+  }
+}

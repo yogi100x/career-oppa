@@ -1,0 +1,22 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "regions": [
+    "iad1"
+  ],
+  "buildCommand": "pnpm build",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "git": {
+    "deploymentEnabled": false
+  },
+  "crons": [
+    {
+      "path": "/api/cron/telegram",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/cron/job-discovery",
+      "schedule": "0 7 * * *"
+    }
+  ]
+}

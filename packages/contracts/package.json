@@ -1,0 +1,17 @@
+{
+  "name": "@career-workspace/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --root ../.. contracts"
+  },
+  "dependencies": {
+    "zod": "^4.1.12"
+  }
+}

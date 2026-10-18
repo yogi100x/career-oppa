@@ -1,0 +1,37 @@
+{
+  "name": "@career-workspace/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint app components lib proxy.ts next.config.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --root ../.. web"
+  },
+  "dependencies": {
+    "@career-workspace/adapters": "workspace:*",
+    "@career-workspace/contracts": "workspace:*",
+    "@career-workspace/core": "workspace:*",
+    "@career-workspace/db": "workspace:*",
+    "@career-workspace/pdf": "workspace:*",
+    "@chat-adapter/state-pg": "4.41.1",
+    "@chat-adapter/telegram": "4.41.1",
+    "@clerk/nextjs": "^6.37.3",
+    "@dodopayments/nextjs": "^0.3.9",
+    "chat": "4.41.1",
+    "drizzle-orm": "^0.44.7",
+    "next": "^16.3.8",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "server-only": "^0.0.1",
+    "workflow": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^5.9.3"
+  }
+}

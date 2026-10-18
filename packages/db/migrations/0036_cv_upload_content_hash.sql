@@ -1,0 +1,2 @@
+ALTER TABLE "files" ADD COLUMN IF NOT EXISTS "content_hash" text;--> statement-breakpoint
+CREATE UNIQUE INDEX IF NOT EXISTS "files_user_kind_hash_unique" ON "files" USING btree ("user_id","kind","content_hash");

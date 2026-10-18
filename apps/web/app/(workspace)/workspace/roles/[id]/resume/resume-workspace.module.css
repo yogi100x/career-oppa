@@ -1,0 +1,519 @@
+.back {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--color-deep-iris);
+  font: inherit;
+  cursor: pointer;
+}
+.page {
+  min-height: 0;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 2px 28px;
+}
+.cvSection,
+.answerSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.sectionHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+.sectionHeading h2 {
+  font-size: 22px;
+  margin: 3px 0 7px;
+}
+.sectionHeading p:not(.kicker) {
+  color: var(--color-iron);
+  font-size: 13px;
+}
+.kicker {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  color: var(--color-deep-iris);
+}
+.versionBadge {
+  flex: none;
+  background: var(--color-solar-yellow);
+  padding: 6px 10px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.emptyCard,
+.approval,
+.answerCard {
+  border: 1px solid var(--color-concrete);
+  border-radius: 6px;
+  background: var(--surface-paper);
+  padding: 20px;
+}
+.emptyCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.emptyCard h3,
+.approval h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.emptyCard p,
+.approval p,
+.preview > p {
+  color: var(--color-iron);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.cvGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: 16px;
+  align-items: start;
+}
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--color-carbon);
+  font-size: 12px;
+  font-weight: 600;
+}
+.field input,
+.field textarea,
+.field select,
+.preview select {
+  width: 100%;
+  border: 1px solid var(--color-concrete);
+  border-radius: 4px;
+  background: var(--surface-paper);
+  color: var(--color-carbon);
+  padding: 9px 10px;
+  font: inherit;
+  font-weight: 400;
+}
+.field textarea {
+  resize: vertical;
+  line-height: 1.5;
+}
+.field select[multiple] {
+  min-height: 90px;
+}
+.field small {
+  font-size: 10px;
+  color: var(--color-iron);
+  font-weight: 400;
+}
+.resumeSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--color-concrete);
+  border-radius: 6px;
+  background: var(--surface-paper);
+}
+.claim {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 12px;
+  border-left: 3px solid var(--color-signal-blue);
+  background: var(--surface-mist);
+}
+.evidence {
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 4px;
+  background: #eaf4ed;
+  color: var(--color-carbon);
+  line-height: 1.5;
+}
+.evidence strong {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #315c43;
+  margin-bottom: 4px;
+}
+.flag {
+  font-size: 12px;
+  padding: 9px;
+  border-radius: 4px;
+  background: #fff1d6;
+  color: #684b0b;
+}
+.propose {
+  align-self: flex-start;
+  border: 0;
+  background: none;
+  padding: 2px 0;
+  color: var(--color-deep-iris);
+  font: inherit;
+  font-size: 11px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.editorActions,
+.answerActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.editorActions span {
+  font-size: 11px;
+  color: var(--color-iron);
+}
+.preview {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  border: 1px solid var(--color-concrete);
+  border-radius: 6px;
+  background: var(--surface-paper);
+  padding: 12px;
+}
+.preview header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 11px;
+}
+.preview header label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: var(--color-iron);
+}
+.preview select {
+  width: auto;
+  padding: 5px 7px;
+}
+.preview iframe {
+  display: block;
+  width: 100%;
+  height: min(66vh, 720px);
+  border: 1px solid var(--color-concrete);
+  background: white;
+}
+.preview > p {
+  font-size: 10px;
+}
+.approval {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: var(--surface-mist);
+}
+.approval > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.check input {
+  margin-top: 3px;
+  accent-color: var(--color-signal-blue);
+}
+.history {
+  border-top: 1px solid var(--color-concrete);
+  padding-top: 12px;
+}
+.history summary {
+  cursor: pointer;
+  color: var(--color-deep-iris);
+  font-size: 12px;
+  font-weight: 600;
+}
+.historyRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 4px;
+  border-bottom: 1px solid var(--color-concrete);
+  font-size: 12px;
+}
+.questionForm {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 12px;
+}
+.answerSection {
+  border-top: 1px solid var(--color-concrete);
+  padding-top: 20px;
+}
+.answerCard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.question {
+  font-size: 13px;
+  font-weight: 650;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-concrete);
+}
+.answerActions {
+  justify-content: space-between;
+  border-top: 1px solid var(--color-concrete);
+  padding-top: 14px;
+}
+.answerActions .check {
+  flex: 1;
+}
+.emptyAnswers {
+  padding: 16px;
+  border: 1px dashed var(--color-concrete);
+  border-radius: 6px;
+  color: var(--color-iron);
+  font-size: 12px;
+}
+.alert,
+.notice,
+.status {
+  padding: 11px 14px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.alert {
+  background: #fff1d6;
+  color: #684b0b;
+}
+.alert a {
+  display: inline-block;
+  margin-left: 4px;
+  text-decoration: underline;
+  font-weight: 600;
+}
+.notice {
+  background: #eaf4ed;
+  color: #315c43;
+}
+.status {
+  color: var(--color-iron);
+}
+@media (max-width: 900px) {
+  .cvGrid {
+    grid-template-columns: 1fr;
+  }
+  .preview {
+    position: static;
+  }
+  .preview iframe {
+    height: 60vh;
+  }
+}
+/* Phones: the version badge and "Create new draft" sit under the heading as a
+   pill that fits its text, instead of squeezing into a circle beside it. */
+@media (max-width: 700px) {
+  .sectionHeading {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+  }
+  .sectionHeading > div {
+    flex: 1 1 100%;
+  }
+  .sectionHeading > button {
+    min-height: 44px;
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .page {
+    gap: 18px;
+  }
+  .sectionHeading h2 {
+    font-size: 19px;
+  }
+  .emptyCard,
+  .approval {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 14px;
+  }
+  .questionForm {
+    grid-template-columns: 1fr;
+  }
+  .questionForm > button {
+    justify-self: start;
+  }
+  .answerActions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .historyRow {
+    align-items: flex-start;
+  }
+  .preview iframe {
+    height: 54vh;
+  }
+}
+
+/* Checkbox list of approved facts for one CV line; full text wraps. */
+.factChoices {
+  display: grid;
+  gap: 6px;
+  max-height: 12rem;
+  overflow-y: auto;
+  margin: 0;
+  padding: 8px;
+  border: 1px solid var(--color-concrete);
+  border-radius: 6px;
+}
+.factChoices legend {
+  font-size: 12px;
+  font-weight: 600;
+}
+.factChoices .check {
+  min-height: 32px;
+}
+
+.preparation {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid var(--color-concrete);
+  border-radius: 6px;
+  background: var(--surface-paper);
+}
+.preparation > h3,
+.reuseSection h4 {
+  margin: 0;
+  font-size: 16px;
+}
+.preparation > p,
+.prepBucket > p,
+.reuseRow p,
+.atsAudit > p {
+  margin: 0;
+  color: var(--color-iron);
+  font-size: 12px;
+  line-height: 1.55;
+}
+.prepWarning {
+  padding: 12px 14px;
+  border-radius: 4px;
+  background: #fff1d6;
+  color: #684b0b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.prepWarning p { margin: 4px 0; }
+.prepBuckets {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.prepBucket {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--color-concrete);
+  border-radius: 4px;
+  background: var(--surface-mist);
+}
+.prepBucket h4 {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 8px;
+  font-size: 12px;
+}
+.prepBucket h4 span { color: var(--color-iron); font-variant-numeric: tabular-nums; }
+.prepBucket ul,
+.prepWarning ul,
+.prepRequirements,
+.atsAudit ul {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding-left: 18px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+.prepBucket li small {
+  margin-left: 7px;
+  color: var(--color-iron);
+  font-size: 10px;
+}
+.prepRequirements { padding: 12px 0 0 20px; }
+.prepRequirements li { padding: 7px 0; }
+.prepRequirements small { color: var(--color-iron); }
+.prepRequirements blockquote {
+  margin: 4px 0 0;
+  color: var(--color-iron);
+  font-size: 11px;
+}
+.reuseSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid var(--color-concrete);
+  padding-top: 12px;
+}
+.reuseRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-concrete);
+  font-size: 12px;
+}
+.prepActions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.atsAudit {
+  display: grid;
+  gap: 6px;
+  padding: 12px;
+  border: 1px solid var(--color-concrete);
+  border-radius: 4px;
+  background: var(--surface-paper);
+}
+.atsAudit h4 { margin: 0; font-size: 13px; }
+.atsAudit .atsScore { color: var(--color-carbon); font-weight: 650; }
+@media (max-width: 700px) {
+  .prepBuckets { grid-template-columns: 1fr; }
+  .reuseRow { align-items: flex-start; flex-direction: column; }
+  .preparation { padding: 14px; }
+}

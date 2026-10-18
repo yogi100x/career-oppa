@@ -1,0 +1,261 @@
+.profileScroll {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 2px 4px 24px 2px;
+}
+
+.section {
+  margin-bottom: 28px;
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.sectionHeading h2 {
+  font-size: 20px;
+}
+
+.sectionHeading p,
+.muted {
+  color: var(--color-iron);
+  font-size: 13px;
+}
+
+.panel,
+.fact,
+.project {
+  border: 1px solid var(--color-concrete);
+  border-radius: 6px;
+  background: var(--surface-paper);
+}
+
+.panel {
+  padding: 18px;
+}
+
+.uploadRow,
+.projectHeader,
+.factHeader,
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.uploadForm,
+.projectForm {
+  display: grid;
+  gap: 12px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  border: 1px solid var(--color-concrete);
+  border-radius: 4px;
+  padding: 10px 12px;
+  background: var(--surface-paper);
+  color: var(--color-carbon);
+  font: inherit;
+  font-weight: 400;
+}
+
+.field textarea {
+  min-height: 82px;
+  resize: vertical;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible,
+.field select:focus-visible {
+  outline: 3px solid var(--color-ultraviolet);
+  outline-offset: 2px;
+}
+
+.fileInput {
+  max-width: 100%;
+}
+
+.factList,
+.projectList {
+  display: grid;
+  gap: 10px;
+}
+
+.fact,
+.project {
+  padding: 16px;
+}
+
+.factText {
+  margin: 12px 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.factEdit {
+  min-height: 82px;
+  width: 100%;
+  margin: 12px 0;
+  border: 1px solid var(--color-concrete);
+  border-radius: 4px;
+  padding: 10px 12px;
+  color: var(--color-carbon);
+  font: inherit;
+  resize: vertical;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 2px;
+  padding: 3px 8px;
+  background: var(--color-concrete);
+  color: var(--color-carbon);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.proposed {
+  background: var(--color-solar-yellow);
+}
+
+.approved {
+  background: var(--color-pulse-green);
+}
+
+.rejected {
+  background: var(--surface-mist);
+  color: var(--color-iron);
+}
+
+.meta {
+  color: var(--color-iron);
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.claims {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+  padding-left: 18px;
+  font-size: 13px;
+}
+
+.claim {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.actions {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.feedback {
+  margin-top: 10px;
+  color: var(--color-iron);
+  font-size: 13px;
+}
+
+.error {
+  color: #8d2525;
+  font-size: 13px;
+}
+
+.empty {
+  padding: 18px;
+  border: 1px dashed var(--color-concrete);
+  border-radius: 6px;
+  color: var(--color-iron);
+  font-size: 13px;
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.8fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.linkList {
+  display: grid;
+  gap: 4px;
+  margin-top: 12px;
+  overflow-wrap: anywhere;
+  color: var(--color-deep-iris);
+  font-size: 12px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.accountLabel {
+  color: var(--color-deep-iris);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.headerActions :global(.cl-userButtonTrigger) {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.headerActions :global(.cl-userButtonPopoverActionButton),
+.headerActions :global(.cl-userButtonPopoverFooterAction) {
+  min-height: 44px;
+}
+
+@media (max-width: 700px) {
+  .profileScroll {
+    padding-inline: 0;
+  }
+
+  .panel,
+  .fact,
+  .project {
+    padding: 12px;
+  }
+
+  .projectGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sectionHeading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .headerActions :global(.cl-userButtonBox) {
+    transform-origin: right center;
+  }
+}
+
+.applicationProfile {
+  min-width: 0;
+}
